@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-const Color kYellowLight = Color(0xFFFFF7EC);
-const Color kYellowDark = Color(0xFFEBBB7F);
-const Color kYellow = Color(0xFFFAF0DA);
+const Color kYellowLight = Color.fromARGB(255, 186, 159, 120);
+const Color kYellowDark = Color.fromARGB(255, 201, 142, 53);
+const Color kYellow = Color.fromARGB(255, 229, 222, 12);
 
-const Color kBlueLight = Color(0xFFEDF4FE);
-const Color kBlueDark = Color(0xFFC0D3F8);
-const Color kBlue = Color(0xFFE1EDFC);
+const Color kBlueLight = Color.fromARGB(255, 197, 211, 231);
+const Color kBlueDark = Color.fromARGB(255, 53, 78, 128);
+const Color kBlue = Color.fromARGB(255, 22, 162, 217);
 
-const Color kRed = Color(0xFFFBE4E6);
-const Color kRedDark = Color(0xFFF8BDC0);
-const Color kRedLight = Color(0xFFFCF0F0);
+const Color kRed = Color.fromARGB(255, 198, 28, 42);
+const Color kRedDark = Color.fromARGB(255, 116, 39, 43);
+const Color kRedLight = Color.fromARGB(255, 227, 165, 165);
 
 const Color kWhite = Colors.white;
 
