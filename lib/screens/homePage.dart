@@ -1,71 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:taskify/screens/profilePage.dart';
-import 'package:taskify/widgets/constant.dart';
-import 'package:taskify/widgets/premium.dart';
+import 'package:taskify/app_constraints/constant.dart';
+import 'package:taskify/screens/premium.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Widget> _pages = [
-    MyHomePage(),
-    MyProfilePage(),
+  int _currentIndex = 0;
+
+  final List<Widget> _pages = [
+    const GoPremium(),
+    const MyProfilePage(),
   ];
-  int activeIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
+      
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: kWhite,
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _currentIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_rounded,
+              size: 30,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                blurRadius: 10,
-                spreadRadius: 5,
-              ),
-            ]),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+            label: "Home",
           ),
-          child: BottomNavigationBar(
-            backgroundColor: kWhite,
-            selectedItemColor: Colors.blueAccent,
-            unselectedItemColor: Colors.grey,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_rounded,
-                  size: 30,
-                ),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person_rounded,
-                  size: 30,
-                ),
-                label: "Home",
-              ),
-            ],
-            onTap: (index) {
-              setState(() {
-                activeIndex = index;
-                // _currentIndex = index;
-              });
-            },
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_rounded,
+              size: 30,
+            ),
+            label: "Profile",
           ),
-        ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -73,73 +56,62 @@ class _MyHomePageState extends State<MyHomePage> {
           borderRadius: BorderRadius.circular(10),
         ),
         backgroundColor: Colors.black,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: kBlueDark,
           size: 30,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      
+      body: _pages[_currentIndex],
     );
   }
-}
 
-AppBar _buildAppBar() {
-  return AppBar(
-    backgroundColor: Color.fromARGB(132, 62, 61, 61),
-    elevation: 0,
-    title: Row(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(
-            left: 10,
-            top: 5,
-            // bottom: 5,
+  AppBar _buildAppBar() {
+    return AppBar(
+      backgroundColor: const Color.fromARGB(132, 62, 61, 61),
+      elevation: 0,
+      title: Row(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(
+              left: 10,
+              top: 5,
+            ),
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
+              color: kBlue,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              child: Image.asset('assets/images/pxfuel(2).jpg'),
+            ),
           ),
-          height: 45,
-          width: 45,
-          decoration: BoxDecoration(
-              color: kBlue, borderRadius: BorderRadius.circular(10)),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/images/pxfuel(2).jpg'),
+          const SizedBox(
+            width: 10,
           ),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Text(
-          "Hello, Ela",
-          style: TextStyle(
-            color: Colors.grey.shade600,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+          const Text(
+            "Hello, Ela",
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-      ],
-    ),
-    actions: <Widget>[
-      IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.more_vert,
-          color: Colors.grey.shade600,
-          size: 35,
-        ),
+        ],
       ),
-    ],
-  );
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        GoPremium(),
+      actions: <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.more_vert,
+            color: Colors.grey,
+            size: 35,
+          ),
+        ),
       ],
     );
   }

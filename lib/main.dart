@@ -1,3 +1,4 @@
+// main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:taskify/screens/homePage.dart';
@@ -7,13 +8,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
+      const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
       ),
@@ -22,11 +22,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 10, 207, 155)),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(
+          secondary: Colors.blueAccent,
+        ),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }

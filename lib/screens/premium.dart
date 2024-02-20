@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskify/widgets/constant.dart';
-
+import 'package:taskify/app_constraints/constant.dart';
 
 class GoPremium extends StatefulWidget {
   const GoPremium({super.key});
@@ -54,7 +53,7 @@ class _GoPremiumState extends State<GoPremium> {
                     borderRadius: BorderRadius.circular(he * 0.02),
                     color: Colors.grey[300],
                   ),
-                  child: ColorFiltered(
+                  child: const ColorFiltered(
                     colorFilter: ColorFilter.mode(
                       Color.fromARGB(255, 204, 198, 198),
                       BlendMode.srcATop,
@@ -62,16 +61,41 @@ class _GoPremiumState extends State<GoPremium> {
                     child: Icon(
                       Icons.workspace_premium_outlined,
                       size: 30,
-                      // size: he * 0.03,
-                      color: Colors.MyThemeColor.textColor,
+                      color: MyThemeColor.textColor,
                     ),
-                    )
                   ),
                 ),
-
+                SizedBox(
+                  width: he * 0.015,
+                ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                  Text(
+                    "Go Premium",
+                    style: TextStyle(
+                      color: Colors.grey[800],
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Get access to all features \nand unlimited downloads",
+                    style: TextStyle(
+                      color: Colors.grey[800],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                    ],
+                  ),
               ],
             ),
-          ),
+          )
         )
       ],
     );
