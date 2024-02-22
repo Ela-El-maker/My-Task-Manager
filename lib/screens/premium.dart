@@ -16,23 +16,26 @@ class _GoPremiumState extends State<GoPremium> {
       children: [
         Container(
           padding: EdgeInsets.all(
-            he * 0.004
+            // he * 0.004
+            he * 0.005,
           ),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
+                // he * 0.02
                 he * 0.02
               ),
              
             ),
             gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              
               colors: [
                 Color(0xFFFDC830),
                 Color(0xFFF37335),
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: Container(
@@ -48,6 +51,7 @@ class _GoPremiumState extends State<GoPremium> {
               children: [
                 Container(
                   height: he * 0.05,
+                  // height: 40,
                   width : he * 0.05,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(he * 0.02),
@@ -91,8 +95,21 @@ class _GoPremiumState extends State<GoPremium> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                    ],
+                  ],
                   ),
+                  Expanded(
+                    child: Container(
+
+                    ),
+                     
+                  ),
+                  IconButton(
+                    icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromARGB(255, 193, 13, 13),
+                    size: 30,
+                  ), onPressed: () {  },
+                )
               ],
             ),
           )
