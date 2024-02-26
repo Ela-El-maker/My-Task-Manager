@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:taskify/models/taskModel.dart';
 
 class Tasks extends StatelessWidget {
-  // final taskList = Task.generateTasks();
-    final List<Task> taskList = Task.generateTasks() ?? []; // Ensure taskList is not null
+   final taskList = Task.generateTasks();
+  //  final List<Task> taskList = Task.generateTasks() ?? []; // Ensure taskList is not null
 
   Tasks({super.key});
 
@@ -23,6 +23,7 @@ class Tasks extends StatelessWidget {
             crossAxisSpacing: 10,
           ),
           itemCount: taskList.length,
+          //itemBuilder: (context, index) => (taskList[index] = taskList[index] + 1),
           //itemBuilder: (context, index) => _buildTask(context, taskList[index].isLast ? taskList[index].)),
           // ignore: unnecessary_null_comparison
           itemBuilder: (context, index) => (taskList[index] != null) ? _buildAddTask() : _buildTask(context, taskList[index]),),
@@ -37,6 +38,12 @@ class Tasks extends StatelessWidget {
 
 Widget _buildAddTask() {
   return DottedBorder(
+    borderType: BorderType.RRect,
+    color: Colors.grey.shade600,
+    strokeWidth: 2,
+    padding: EdgeInsets.all(10),
+    radius: Radius.circular(20),
+    dashPattern: [10, 10],
     child: Center(
       child: Icon(
         Icons.add,
@@ -44,12 +51,6 @@ Widget _buildAddTask() {
         size: 30,
       ),
     ),
-    borderType: BorderType.RRect,
-    color: Colors.grey.shade600,
-    strokeWidth: 2,
-    padding: EdgeInsets.all(10),
-    radius: Radius.circular(20),
-    dashPattern: [10, 10],
   );
 }
 

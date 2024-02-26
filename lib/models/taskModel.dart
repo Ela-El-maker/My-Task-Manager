@@ -31,7 +31,7 @@ class Task {
         btnColor: kBlue,
         left: 5,
         done: 3,
-        isLast: false,
+        isLast: true,
       ),
       Task(
         icon: Icons.person_rounded,

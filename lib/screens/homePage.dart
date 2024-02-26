@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:taskify/app_constraints/constant.dart';
+import 'package:taskify/models/taskModel.dart';
 import 'package:taskify/screens/premium.dart';
 import 'package:taskify/screens/profilePage.dart';
+import 'package:taskify/app_constraints/tasks.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -155,9 +157,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(child: Container(
-
-        ))
+        Expanded(child: Tasks()),
       ],
     );
   }
