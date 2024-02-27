@@ -9,7 +9,16 @@ class MyProfilePage extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: Text("My Profile"),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {},
+          color: Colors.black,
+  
+        ),
       ),
       body: Center(
         child: Container(
@@ -19,7 +28,7 @@ class MyProfilePage extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: height * 0.1,
-                backgroundImage: AssetImage('assets/images/profile_image.jpg'),
+                backgroundImage: AssetImage('assets/images/ela.png'),
               ),
               SizedBox(height: height * 0.02),
               Text(

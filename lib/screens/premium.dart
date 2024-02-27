@@ -31,8 +31,8 @@ class _GoPremiumState extends State<GoPremium> {
             gradient: const LinearGradient(
               
               colors: [
-                Color(0xFFFDC830),
-                Color(0xFFF37335),
+                Color(0xFFD4AF37),
+                Color(0xFFFF5A09),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

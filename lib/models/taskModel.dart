@@ -26,9 +26,9 @@ class Task {
       Task(
         icon: Icons.person,
         title: 'Personal',
-        bgColor: kBlue,
-        iconColor: kBlueLight,
-        btnColor: kBlue,
+        bgColor: kBlueLight,
+        iconColor: kBlue,
+        btnColor: kBlueDark,
         left: 2,
         done: 5,
         isLast: false,
@@ -74,7 +74,61 @@ class Task {
         done: 3,
         isLast: false,
       ),
-      
+      Task(
+        icon: Icons.sports_soccer,
+        title: 'Sports',
+        bgColor: Color.fromARGB(255, 93, 193, 199),
+        iconColor: Color.fromARGB(255, 2, 129, 135),
+        btnColor: Color.fromARGB(255, 0, 36, 38),
+        left: 3,
+        done: 2,
+        isLast: false,
+      ),
+
+      Task(
+        icon: Icons.music_note,
+        title: 'Music',
+        bgColor: Color.fromARGB(255, 194, 107, 217),
+        iconColor: Color.fromARGB(255, 142, 37, 148),
+        btnColor: Color.fromARGB(255, 64, 0, 97),
+        left: 5,
+        done: 3,
+        isLast: false,
+      ),
+
+      Task(
+        icon: Icons.local_cafe,
+        title: 'Hobby',
+        bgColor: Color.fromARGB(255, 240, 188, 128),
+        iconColor: Color.fromARGB(255, 217, 138, 73),
+        btnColor: Color.fromARGB(255, 97, 56, 0),
+        left: 2,
+        done: 1,
+        isLast: false,
+      ),
+
+      Task(
+        icon: Icons.family_restroom,
+        title: 'Family',
+        bgColor: Color.fromARGB(255, 157, 157, 214),
+        iconColor: Color.fromARGB(255, 105, 105, 181),
+        btnColor: Color.fromARGB(255, 23, 23, 80),
+        left: 4,
+        done: 2,
+        isLast: false,
+      ),
+
+      Task(
+        icon: Icons.directions_bike,
+        title: 'Fitness',
+        bgColor: Color.fromARGB(255, 125, 206, 160),
+        iconColor: Color.fromARGB(255, 34, 139, 87),
+        btnColor: Color.fromARGB(255, 0, 58, 18),
+        left: 3,
+        done: 2,
+        isLast: true,
+      ),
+
     ];
   }
 }

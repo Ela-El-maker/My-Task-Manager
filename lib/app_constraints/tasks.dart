@@ -12,6 +12,7 @@ class Tasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
         vertical: 10,

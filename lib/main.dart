@@ -1,6 +1,7 @@
 // main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:taskify/screens/MenuPage.dart';
 import 'package:taskify/screens/homePage.dart';
 
 void main() {
@@ -25,10 +26,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.blue,
         ).copyWith(
-          secondary: Colors.blueAccent,
+          secondary: const Color.fromARGB(255, 205, 209, 217),
         ),
         useMaterial3: true,
       ),
+      routes: {
+        '/my_home-page':(context) => MyHomePage(),
+        '/menu_page':(context) => menuPage(),
+      },
       home: const MyHomePage(),
     );
   }
