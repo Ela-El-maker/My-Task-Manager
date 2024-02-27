@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.person_rounded,
                   size: 30,
                 ),
-                label: "Home",
+                label: "Profile",
               ),
             ],
             onTap: (index) {
@@ -89,8 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 AppBar _buildAppBar() {
   return AppBar(
-    backgroundColor: Color.fromARGB(132, 62, 61, 61),
-    elevation: 0,
+    backgroundColor: Colors.grey[900],
+    //Image for the background image in the background of the app bar 
     title: Row(
       children: <Widget>[
         Container(
@@ -102,19 +102,21 @@ AppBar _buildAppBar() {
           height: 45,
           width: 45,
           decoration: BoxDecoration(
-              color: kBlue, borderRadius: BorderRadius.circular(10)),
+              color: kBlue, 
+              borderRadius: BorderRadius.circular(10),
+            ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/images/pxfuel(2).jpg'),
+            child: Image.asset('assets/images/ela.png'),
           ),
         ),
         SizedBox(
-          width: 10,
+          width: 15,
         ),
         Text(
           "Hello, Ela",
           style: TextStyle(
-            color: Colors.grey.shade600,
+            color: const Color.fromARGB(255, 255, 255, 255),
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),

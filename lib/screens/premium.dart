@@ -21,13 +21,13 @@ class _GoPremiumState extends State<GoPremium> {
           ),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(
-                // he * 0.02
-                he * 0.02
-              ),
-             
-            ),
+            // borderRadius: BorderRadius.only(
+            //   topLeft: Radius.circular(
+            //     // he * 0.02
+            //     he * 0.02
+            //   ),
+             borderRadius: BorderRadius.circular(he * 0.02), // Make all corners rounded
+
             gradient: const LinearGradient(
               
               colors: [
@@ -106,7 +106,7 @@ class _GoPremiumState extends State<GoPremium> {
                   IconButton(
                     icon: Icon(
                     Icons.arrow_forward_ios,
-                    color: Color.fromARGB(255, 193, 13, 13),
+                    color: Color.fromARGB(255, 0, 0, 0),
                     size: 30,
                   ), onPressed: () {  },
                 )
