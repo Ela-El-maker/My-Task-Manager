@@ -9,13 +9,27 @@ class settingsPage extends StatefulWidget {
 }
 
 class _settingsPageState extends State<settingsPage> {
-  bool isSwitched = true;
-  bool isSound = true;
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
       backgroundColor: kDark,
+      appBar: AppBar(
+        title: Text(
+          'Settings',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+      ),
+      ),
+        centerTitle: true,
+        backgroundColor: kDark,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+      ),
     ),
     );
   }

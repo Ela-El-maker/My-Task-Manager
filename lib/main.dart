@@ -1,6 +1,8 @@
 // main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:taskify/routes.dart';
 import 'package:taskify/screens/LoginPages/loginPage.dart';
 import 'package:taskify/screens/MenuPage.dart';
 import 'package:taskify/screens/homePage.dart';
@@ -20,24 +22,22 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return MaterialApp(
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   //title: 'Flutter Demo',
+
+    //   routes: {
+    //     '/login': (context) => LoginPage(),
+    //     '/my_home-page':(context) => MyHomePage(),
+    //     '/menu_page':(context) => menuPage(),
+    //   },
+    //   home: LoginPage(),
+    // );
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSwatch(
-      //     primarySwatch: Colors.blue,
-      //   ).copyWith(
-      //     secondary: const Color.fromARGB(255, 205, 209, 217),
-      //   ),
-      //   useMaterial3: true,
-      // ),
-      
-      routes: {
-        '/login': (context) => LoginPage(),
-        '/my_home-page':(context) => MyHomePage(),
-        '/menu_page':(context) => menuPage(),
-      },
-      home: LoginPage(),
+      title: "Welcome to Taskify",
+      initialRoute: '/',
+      getPages: routes,
     );
   }
 }
