@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:taskify/app_constraints/constant.dart';
-import 'package:taskify/screens/homePage.dart';
-import 'package:taskify/screens/profilePage.dart';
 import 'package:taskify/screens/settings.dart';
 
 class menuPage extends StatefulWidget {
@@ -21,12 +19,6 @@ class _menuPageState extends State<menuPage> {
     var he = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Menu"),
-      //   centerTitle: true,
-      //   backgroundColor: Color.fromARGB(255, 211, 211, 211),
-      //   toolbarHeight: he * 0.1,
-      // ),
       backgroundColor: kDark,
       body: ColorfulSafeArea(
         color: Colors.black26,
@@ -35,9 +27,7 @@ class _menuPageState extends State<menuPage> {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // SizedBox(height: he * 0.01),
                 Padding(
                   padding: EdgeInsets.only(top: he * 0.03, bottom: he * 0.03),
                   child: Row(

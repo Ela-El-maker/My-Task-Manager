@@ -37,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _scrollListener() {
-    if (_scrollController.position.userScrollDirection == ScrollDirection.reverse) {
+    if (_scrollController.position.userScrollDirection ==
+        ScrollDirection.reverse) {
       if (_isVisible) {
         setState(() {
           _isVisible = false;
@@ -85,80 +86,64 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-  onPressed: () {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        // This is the content of the bottom sheet
-     return Scaffold(
-  backgroundColor: kTeal,
-  body: SingleChildScrollView(
-    child: Padding(
-      padding: EdgeInsets.all(16),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Add Task',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        onPressed: () {
+          // _showInputDialog;
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                backgroundColor: Colors.teal,
+                content: SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Add Task',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          TextFormField(
+                            decoration: InputDecoration(
+                              hintText: 'Task Name',
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Implement task addition logic here
+                              Navigator.pop(
+                                  context); // Close the modal bottom sheet
+                            },
+                            child: Text('Add Task'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  // ),
                 ),
-              ),
-              SizedBox(height: 20),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Task Name',
-                ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Implement task addition logic here
-                  Navigator.pop(context); // Close the modal bottom sheet
-                },
-                child: Text('Add Task'),
-              ),
-            ],
-          ),
+              );
+
+            },
+          );
+        },
+        child: Icon(
+          Icons.add,
+          color: kBlueDark,
+          size: 30,
         ),
       ),
-    ),
-  ),
-);
 
-
-
-      },
-    );
-  },
-  child: Icon(
-    Icons.add,
-    color: kBlueDark,
-    size: 30,
-  ),
-),
-
-floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       body: _pages[activeIndex],
-      backgroundColor: Color.fromARGB(190, 65, 65, 66), // Dark mode background color
+      backgroundColor:
+          Color.fromARGB(190, 65, 65, 66), // Dark mode background color
     );
   }
 
@@ -247,3 +232,11 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// void _showInputDialog(BuildContext context) {
+//   showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return 
+//       });
+// }

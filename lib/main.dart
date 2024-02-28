@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:taskify/routes.dart';
-import 'package:taskify/screens/LoginPages/loginPage.dart';
-import 'package:taskify/screens/MenuPage.dart';
-import 'package:taskify/screens/homePage.dart';
-
 void main() {
   runApp(const MyApp());
 }

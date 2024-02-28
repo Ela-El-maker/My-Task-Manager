@@ -10,7 +10,7 @@ final List<GetPage> routes = [
   GetPage(name: '/signup', page: () => const SignUpPage()),
   GetPage(name: '/home', page: () => const MyHomePage()),
   GetPage(name: '/profile', page: () => const MyProfilePage()),
-  // GetPage(name: '/premium', page: () => const PremiumHome()),
+  
 
   
 ];
