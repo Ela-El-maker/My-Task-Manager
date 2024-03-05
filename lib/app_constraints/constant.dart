@@ -91,7 +91,7 @@ class MyThemeColor {
   static const Color backgroundColor = Color(0x802E2E2E); // Adjusted alpha channel
   static const Color textColor = Color(0xD9FFFFFF); // Adjusted alpha channel
   static const Color subTextColor = Color(0x99C6C6C6); // Adjusted alpha channel
-  
+
   static const Color tealColor = Color(0xFF008080); // New color
   static const Color lavenderColor = Color(0xFFA569BD); // New color
   static const Color magentaColor = Color(0xFFFD3A4A); // New color

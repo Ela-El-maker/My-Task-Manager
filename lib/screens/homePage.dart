@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
-import 'package:taskify/app_constraints/constant.dart';
-import 'package:taskify/screens/MenuPage.dart';
-import 'package:taskify/screens/PremiumPages/premium.dart';
+
 import 'package:taskify/screens/profilePage.dart';
-import 'package:taskify/app_constraints/tasks.dart';
+
+import '../app_constraints/constant.dart';
+import 'MenuPage.dart';
+import 'PremiumPages/premium.dart';
+import 'Tasks/tasks.dart';
+
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -94,37 +97,37 @@ class _MyHomePageState extends State<MyHomePage> {
               return AlertDialog(
                 backgroundColor: Colors.teal,
                 content: SingleChildScrollView(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Add Task',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Add Task',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
                           ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'Task Name',
-                            ),
+                        ),
+                        SizedBox(height: 20),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Task Name',
                           ),
-                          SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Implement task addition logic here
-                              Navigator.pop(
-                                  context); // Close the modal bottom sheet
-                            },
-                            child: Text('Add Task'),
-                          ),
-                        ],
-                      ),
+                        ),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Implement task addition logic here
+                            Navigator.pop(
+                                context); // Close the modal bottom sheet
+                          },
+                          child: Text('Add Task'),
+                        ),
+                      ],
                     ),
+                  ),
                   // ),
                 ),
               );
@@ -143,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: _pages[activeIndex],
       backgroundColor:
-          Color.fromARGB(190, 65, 65, 66), // Dark mode background color
+      Color.fromARGB(190, 65, 65, 66), // Dark mode background color
     );
   }
 
@@ -167,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset('assets/images/ela.png'),
+              child: Image.asset('assets/images/4323015.png'),
             ),
           ),
           const SizedBox(
@@ -232,11 +235,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-// void _showInputDialog(BuildContext context) {
-//   showDialog(
-//       context: context,
-//       builder: (BuildContext context) {
-//         return 
-//       });
-// }

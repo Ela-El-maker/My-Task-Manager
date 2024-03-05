@@ -111,32 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: kBlueLight2,
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
-                // child: TextButton(
-                //   child: const Text(
-                //     "Log In",
-                //     style: TextStyle(
-                //       color: Colors.white,
-                //       fontSize: 20,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   ),
-                //   onPressed: () {
-                //     // Navigator.push(
-                //     //   context,
-                //     //   MaterialPageRoute(
-                //     //     builder: (context) => LoginPage(),
-                //     //   ),
-                //     // );
-                    
-                //     if (_signInKey.currentState!.validate()) {
-                //       debugPrint("Email : ${_emailController.text}");
-                //       debugPrint("Password : ${_passwordController.text}");
-                //     }
 
-                //     Get.toNamed('/home');
-                //   },
-                  
-                // ),
                 child: TextButton(
                     child: const Text(
                       "Log In",

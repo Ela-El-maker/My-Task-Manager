@@ -18,17 +18,6 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   //title: 'Flutter Demo',
-
-    //   routes: {
-    //     '/login': (context) => LoginPage(),
-    //     '/my_home-page':(context) => MyHomePage(),
-    //     '/menu_page':(context) => menuPage(),
-    //   },
-    //   home: LoginPage(),
-    // );
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Welcome to Taskify",

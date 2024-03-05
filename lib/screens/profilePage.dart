@@ -132,3 +132,370 @@ class MyProfilePage extends StatelessWidget {
     );
   }
 }
+//
+// import 'package:flutter/material.dart';
+// import '../app_constraints/constant.dart';
+//
+// class MyProfilePage extends StatelessWidget {
+//   const MyProfilePage({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     var he = MediaQuery.of(context).size.height;
+//
+//     return Scaffold(
+//       backgroundColor: Color.fromARGB(190, 65, 65, 66),
+//       body: SafeArea(
+//         child: Container(
+//           padding: EdgeInsets.only(
+//               left: he * 0.03,
+//               right: he * 0.03,
+//               top: he * 0.03,
+//               bottom: he * 0.03),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               SizedBox(height: 15),
+//               Text(
+//                 "FirstName",
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: he * 0.01,
+//               ),
+//               SizedBox(
+//                 height: he * 0.045,
+//                 child: TextFormField(
+//                     decoration: InputDecoration(
+//                       contentPadding: EdgeInsets.only(left: 10, top: 12),
+//                       hintText: "John",
+//                       hintStyle: TextStyle(
+//                         color: const Color.fromARGB(255, 93, 89, 89),
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                       ),
+//                       border: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(10),
+//                         borderSide: BorderSide(
+//                           color: MyThemeColor.textColor,
+//                         ),
+//                       ),
+//                       focusedBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(10),
+//                         borderSide: BorderSide(
+//                           color: MyThemeColor.textColor,
+//                         ),
+//                       ),
+//                       enabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(10),
+//                         borderSide: BorderSide(
+//                           color: MyThemeColor.textColor,
+//                         ),
+//                       ),
+//                     )),
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Text(
+//                 "LastName",
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: he * 0.01,
+//               ),
+//               SizedBox(
+//                 height: he * 0.045,
+//                 child: TextFormField(
+//                   decoration: InputDecoration(
+//                     contentPadding: EdgeInsets.only(left: 10, top: 12),
+//                     hintText: "Doe",
+//                     hintStyle: TextStyle(
+//                       color: const Color.fromARGB(255, 93, 89, 89),
+//                       fontSize: 16,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(10),
+//                       borderSide: BorderSide(
+//                         color: MyThemeColor.textColor,
+//                       ),
+//                     ),
+//                     focusedBorder: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(10),
+//                       borderSide: BorderSide(
+//                         color: MyThemeColor.textColor,
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Text(
+//                 "Username",
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//               Row(
+//                 children: [
+//                   SizedBox(
+//                     width: he * 0.25,
+//                     height: he * 0.045,
+//                     child: TextFormField(
+//                       keyboardType: TextInputType.name,
+//                       decoration: InputDecoration(
+//                         contentPadding: EdgeInsets.only(left: 10, top: 12),
+//                         hintText: "johndoe",
+//                         hintStyle: TextStyle(),
+//                         border: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         focusedBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         enabledBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   Expanded(
+//                     child: Container(),
+//                   ),
+//                   TextButton(
+//                     onPressed: () {},
+//                     child: Text(
+//                       "Change",
+//                       style: TextStyle(
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                         color: Color.fromARGB(255, 11, 205, 30),
+//                       ),
+//                     ),
+//                   ),
+//                   Icon(
+//                     Icons.edit,
+//                     color: Colors.blueAccent,
+//                     size: 20,
+//                   ),
+//                 ],
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Text(
+//                 "Phone Number",
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//               Row(
+//                 children: [
+//                   SizedBox(
+//                     width: he * 0.25,
+//                     height: he * 0.045,
+//                     child: TextFormField(
+//                       keyboardType: TextInputType.number,
+//                       decoration: InputDecoration(
+//                         contentPadding: EdgeInsets.only(left: 10, top: 12),
+//                         hintText: "+2547000000000",
+//                         hintStyle: TextStyle(),
+//                         border: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         focusedBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         enabledBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   Expanded(
+//                     child: Container(),
+//                   ),
+//                   TextButton(
+//                     onPressed: () {},
+//                     child: Text(
+//                       "Change",
+//                       style: TextStyle(
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                         color: Color.fromARGB(255, 11, 205, 30),
+//                       ),
+//                     ),
+//                   ),
+//                   Icon(
+//                     Icons.edit,
+//                     color: Colors.blueAccent,
+//                     size: 20,
+//                   ),
+//                 ],
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Text(
+//                 "Email Address",
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//               Row(
+//                 children: [
+//                   SizedBox(
+//                     width: he * 0.25,
+//                     height: he * 0.045,
+//
+//                     child: TextFormField(
+//                       keyboardType: TextInputType.emailAddress,
+//                       decoration: InputDecoration(
+//                         contentPadding: EdgeInsets.only(left: 10, top: 12),
+//                         hintText: "johndoe@gmail.com",
+//                         hintStyle: TextStyle(),
+//                         border: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         focusedBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                         enabledBorder: OutlineInputBorder(
+//                           borderRadius: BorderRadius.circular(10),
+//                           borderSide: BorderSide(
+//                             color: MyThemeColor.textColor,
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   Expanded(
+//                     child: Container(),
+//                   ),
+//                   TextButton(
+//                     onPressed: () {},
+//                     child: Text(
+//                       "Change",
+//                       style: TextStyle(
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                         color: Color.fromARGB(255, 11, 205, 30),
+//                       ),
+//                     ),
+//                   ),
+//                   Icon(
+//                     Icons.arrow_forward_ios_outlined,
+//                     color: Colors.blueAccent,
+//                     size: 20,
+//                   ),
+//                 ],
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Divider(
+//                 color: Colors.grey[200],
+//                 thickness: 1,
+//               ),
+//               SizedBox(
+//                 height: he * 0.01,
+//               ),
+//               Row(
+//                 children: [
+//                   Text(
+//                     "Add Account",
+//                     style: TextStyle(
+//                       fontSize: 18,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.grey[600],
+//                     ),
+//                   ),
+//                   Expanded(child: Container()),
+//                   Icon(
+//                     Icons.arrow_forward_ios,
+//                     color: Colors.blueAccent,
+//                     size: 18,
+//                   )
+//                 ],
+//               ),
+//               SizedBox(
+//                 height: he * 0.02,
+//               ),
+//               Row(children: [
+//                 Text(
+//                   "Switch Account",
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.w400,
+//                     color: Colors.grey[600],
+//                   ),
+//                 ),
+//                 Expanded(child: Container()),
+//                 Icon(
+//                   Icons.arrow_forward_ios,
+//                   color: Colors.blueAccent,
+//                   size: 18,
+//                 ),
+//               ]),
+//               SizedBox(height: he * 0.01),
+//               GestureDetector(
+//                 onTap: () {},
+//                 child: Text(
+//                   "Log Out",
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.w400,
+//                     color: Color.fromARGB(255, 42, 183, 190),
+//                   ),
+//                 ),
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
