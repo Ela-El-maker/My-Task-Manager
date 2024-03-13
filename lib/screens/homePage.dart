@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
-
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:taskify/app_constraints/customDialog.dart';
 import 'package:taskify/screens/profilePage.dart';
-
 import '../app_constraints/constant.dart';
 import 'MenuPage.dart';
 import 'PremiumPages/premium.dart';
 import 'Tasks/tasks.dart';
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -90,12 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // _showInputDialog;
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return AlertDialog(
-                backgroundColor: Colors.teal,
+              return CustomDialog(
                 content: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(16),
@@ -117,21 +114,66 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         SizedBox(height: 20),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Task Description',
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: 'Due Date',
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: 'Due Time',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        DropdownButtonFormField<String>(
+                          decoration: InputDecoration(
+                            hintText: 'Priority',
+                          ),
+                          value: null,
+                          items: ['High', 'Medium', 'Low'].map((priority) {
+                            return DropdownMenuItem(
+                              value: priority,
+                              child: Text(priority),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            // Handle priority selection
+                          },
+                        ),
+                        SizedBox(height: 20),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Category/Tags',
+                          ),
+                        ),
+                        SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
                             // Implement task addition logic here
-                            Navigator.pop(
-                                context); // Close the modal bottom sheet
+                            Navigator.pop(context); // Close the dialog
                           },
                           child: Text('Add Task'),
                         ),
                       ],
                     ),
                   ),
-                  // ),
                 ),
               );
-
             },
           );
         },
@@ -146,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: _pages[activeIndex],
       backgroundColor:
-      Color.fromARGB(190, 65, 65, 66), // Dark mode background color
+          Color.fromARGB(190, 65, 65, 66), // Dark mode background color
     );
   }
 
@@ -154,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: kDark, // Dark mode background color
-      toolbarHeight: 70,
+      toolbarHeight: 100,
       title: Row(
         children: <Widget>[
           Container(
@@ -170,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset('assets/images/4323015.png'),
+              child: Image.asset('assets/images/ela.png'),
             ),
           ),
           const SizedBox(
@@ -191,7 +233,19 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => menuPage()),
+              PageRouteBuilder(
+                transitionDuration: Duration(milliseconds: 1000),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return SlideTransition(
+                    position: Tween(begin: Offset(1.0, 0.0), end: Offset.zero)
+                        .animate(animation),
+                    child: child,
+                  );
+                },
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    menuPage(),
+              ),
             );
           },
           icon: const Icon(

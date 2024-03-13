@@ -20,14 +20,14 @@ Widget upperHeader(String text, BuildContext context, bool isIcon, Widget page) 
         ),
         SizedBox(
           width: he*0.03,
-        ), // Add some space between the icon and the text
+          ), // Add some space between the icon and the text
         CustomText(
-          text: text,
-          size: 28,
-        ),
-
+            text: text,
+            size: 28,
+          ),
+        
         Expanded(
-          child: Container(),
+          child: Container(), 
         ),
         isIcon ? Icon(
           Icons.search,
