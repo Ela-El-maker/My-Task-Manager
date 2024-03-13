@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskify/app_constraints/constant.dart';
-import 'package:taskify/screens/LoginPages/loginPage.dart';
+
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key, this.title});
